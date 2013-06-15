@@ -67,8 +67,6 @@
 #pragma mark - Internal
 - (void)loadSplitViewController
 {
-    
-    NSString* tempString = @"ddd";
     NSMutableArray* splitVCS_ = [[NSMutableArray alloc] init];
     
     //左视图
@@ -85,7 +83,6 @@
     
     //分栏视图
     self.splitViewController = [[[UISplitViewController alloc] init] autorelease];
-    self.splitViewController.presentsWithGesture = YES;
     self.splitViewController.viewControllers = splitVCS_;
     self.splitViewController.delegate = self.myDetailViewController;
 }

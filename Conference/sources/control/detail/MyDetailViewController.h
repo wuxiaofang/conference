@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "PosBaseViewController.h"
+#import "MeetingManageViewController.h"
+
 @interface MyDetailViewController : PosBaseViewController<UISplitViewControllerDelegate>
 
 @end
