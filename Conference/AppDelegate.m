@@ -67,6 +67,8 @@
 #pragma mark - Internal
 - (void)loadSplitViewController
 {
+    
+    NSString* tempString = @"ddd";
     NSMutableArray* splitVCS_ = [[NSMutableArray alloc] init];
     
     //左视图
