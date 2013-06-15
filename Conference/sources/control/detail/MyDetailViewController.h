@@ -14,6 +14,9 @@ typedef enum{
     LoadCreateConference,   //创建会议
     LoadMyTask              //我的任务
 }LoadType;
+
+#import "MeetingManageViewController.h"
+
 @interface MyDetailViewController : PosBaseViewController<UISplitViewControllerDelegate>
 
 - (void)loadDataSource:(LoadType)loadtype;
