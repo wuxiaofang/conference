@@ -65,6 +65,9 @@
 		5C782BEE176C58DF00B2AA98 /* PosLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C782BEC176C58DF00B2AA98 /* PosLoginViewController.xib */; };
 		5C782BF1176C5DCF00B2AA98 /* MyMasterTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C782BF0176C5DCF00B2AA98 /* MyMasterTitleCell.m */; };
 		5C782BF4176C5DE000B2AA98 /* MyMasterSubTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C782BF3176C5DE000B2AA98 /* MyMasterSubTitleCell.m */; };
+		5CEBCC1E176CB07800041701 /* PublicMeetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEBCC1D176CB07800041701 /* PublicMeetingViewController.m */; };
+		5CEBCC21176CB08C00041701 /* CreateMeetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEBCC20176CB08C00041701 /* CreateMeetingViewController.m */; };
+		5CEBCC26176CB12E00041701 /* MyTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEBCC25176CB12E00041701 /* MyTaskViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -165,6 +168,12 @@
 		5C782BF0176C5DCF00B2AA98 /* MyMasterTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMasterTitleCell.m; sourceTree = "<group>"; };
 		5C782BF2176C5DE000B2AA98 /* MyMasterSubTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMasterSubTitleCell.h; sourceTree = "<group>"; };
 		5C782BF3176C5DE000B2AA98 /* MyMasterSubTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMasterSubTitleCell.m; sourceTree = "<group>"; };
+		5CEBCC1C176CB07800041701 /* PublicMeetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicMeetingViewController.h; sourceTree = "<group>"; };
+		5CEBCC1D176CB07800041701 /* PublicMeetingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicMeetingViewController.m; sourceTree = "<group>"; };
+		5CEBCC1F176CB08C00041701 /* CreateMeetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateMeetingViewController.h; sourceTree = "<group>"; };
+		5CEBCC20176CB08C00041701 /* CreateMeetingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateMeetingViewController.m; sourceTree = "<group>"; };
+		5CEBCC24176CB12E00041701 /* MyTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTaskViewController.h; sourceTree = "<group>"; };
+		5CEBCC25176CB12E00041701 /* MyTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTaskViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +285,7 @@
 		5C3C675A176B679A0052D40B /* Conference */ = {
 			isa = PBXGroup;
 			children = (
+				5CEBCC27176CBC5F00041701 /* resources */,
 				5C3C67A8176B67F70052D40B /* sources */,
 				5C3C6771176B67C90052D40B /* vendor */,
 				5C3C6763176B679A0052D40B /* AppDelegate.h */,
@@ -491,6 +501,9 @@
 		5C3C67D5176B688D0052D40B /* detail */ = {
 			isa = PBXGroup;
 			children = (
+				5CEBCC22176CB10900041701 /* task */,
+				5CEBCC1B176CB06200041701 /* publicmeeting */,
+				5CEBCC1A176CB04C00041701 /* createmeeting */,
 				4FE7BD95176C5A5300CC8160 /* GridView */,
 				5C3C67D7176B68AE0052D40B /* MyDetailViewController.h */,
 				5C3C67D8176B68AE0052D40B /* MyDetailViewController.m */,
@@ -511,6 +524,64 @@
 				5C782BF3176C5DE000B2AA98 /* MyMasterSubTitleCell.m */,
 			);
 			path = master;
+			sourceTree = "<group>";
+		};
+		5CEBCC1A176CB04C00041701 /* createmeeting */ = {
+			isa = PBXGroup;
+			children = (
+				5CEBCC1F176CB08C00041701 /* CreateMeetingViewController.h */,
+				5CEBCC20176CB08C00041701 /* CreateMeetingViewController.m */,
+			);
+			path = createmeeting;
+			sourceTree = "<group>";
+		};
+		5CEBCC1B176CB06200041701 /* publicmeeting */ = {
+			isa = PBXGroup;
+			children = (
+				5CEBCC1C176CB07800041701 /* PublicMeetingViewController.h */,
+				5CEBCC1D176CB07800041701 /* PublicMeetingViewController.m */,
+			);
+			path = publicmeeting;
+			sourceTree = "<group>";
+		};
+		5CEBCC22176CB10900041701 /* task */ = {
+			isa = PBXGroup;
+			children = (
+				5CEBCC23176CB11E00041701 /* mytask */,
+			);
+			path = task;
+			sourceTree = "<group>";
+		};
+		5CEBCC23176CB11E00041701 /* mytask */ = {
+			isa = PBXGroup;
+			children = (
+				5CEBCC24176CB12E00041701 /* MyTaskViewController.h */,
+				5CEBCC25176CB12E00041701 /* MyTaskViewController.m */,
+			);
+			path = mytask;
+			sourceTree = "<group>";
+		};
+		5CEBCC27176CBC5F00041701 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				5CEBCC29176CBC8000041701 /* mymaster */,
+				5CEBCC28176CBC7200041701 /* mydetail */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		5CEBCC28176CBC7200041701 /* mydetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = mydetail;
+			sourceTree = "<group>";
+		};
+		5CEBCC29176CBC8000041701 /* mymaster */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = mymaster;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -579,7 +650,6 @@
 				4FE7BDAD176C5A5300CC8160 /* grid_arrow_up.png in Resources */,
 				4FE7BDAE176C5A5300CC8160 /* grid_arrow_up@2x.png in Resources */,
 				4FE7BDAF176C5A5300CC8160 /* grid_delete.png in Resources */,
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,6 +695,9 @@
 				4FE7BDB1176C5A5300CC8160 /* GridColumnModel.m in Sources */,
 				4FE7BDB2176C5A5300CC8160 /* GridRowView.m in Sources */,
 				4FE7BDB3176C5A5300CC8160 /* GridStateView.m in Sources */,
+				5CEBCC1E176CB07800041701 /* PublicMeetingViewController.m in Sources */,
+				5CEBCC21176CB08C00041701 /* CreateMeetingViewController.m in Sources */,
+				5CEBCC26176CB12E00041701 /* MyTaskViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

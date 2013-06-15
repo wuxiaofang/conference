@@ -24,3 +24,4 @@ void removeObserverFromNotificationCenter(id observer)
 
 
 NSString* const PosLoginNotification = @"LoginNotification";
+NSString* const PosLogoutNotification = @"LoginNotification";

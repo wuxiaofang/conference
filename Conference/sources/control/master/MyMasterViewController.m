@@ -13,8 +13,9 @@
 #import "AppDelegate.h"
 @interface MyMasterViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,retain)UITableView* myTableView;
-
+@property (nonatomic,retain)UIButton* logoutButton;
 - (void)initMyTableView;
+- (void)logoutButtonPress;
 @end
 
 @implementation MyMasterViewController
@@ -34,6 +35,14 @@
 	// Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     [self initMyTableView];
+    self.logoutButton = [[UIButton alloc] init];
+    [self.logoutButton setTitle:@"注销系统" forState:UIControlStateNormal];
+    [self.logoutButton addTarget:self action:@selector(logoutButtonPress) forControlEvents:UIControlEventTouchUpInside];
+    [self.logoutButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [self.logoutButton setTitleColor:[UIColor blueColor] forState:UIControlStateHighlighted];
+
+    self.logoutButton.titleLabel.font = [UIFont boldSystemFontOfSize:24.0f];
+    [self.view addSubview:self.logoutButton];
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,9 +50,18 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    CGFloat viewWidth = self.view.bounds.size.width;
+    CGFloat viewHeigth = self.view.bounds.size.height;
+    self.myTableView.frame = CGRectMake(0, 0, viewWidth, viewHeigth - 40);
+    self.logoutButton.frame = CGRectMake(0, viewHeigth - 40, viewWidth, 40);
+}
 - (void)dealloc
 {
     self.myTableView = nil;
+    self.logoutButton = nil;
     [super dealloc];
 }
 #pragma mark - init
@@ -58,6 +76,11 @@
     self.myTableView.backgroundColor = [UIColor clearColor];
     self.myTableView.backgroundView = nil;
     [self.view addSubview:self.myTableView];
+}
+#pragma mark - Internal
+- (void)logoutButtonPress
+{
+    sendNotification(PosLogoutNotification, nil);
 }
 #pragma mark - UITableViewDataSource
 

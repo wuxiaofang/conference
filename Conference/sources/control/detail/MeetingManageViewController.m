@@ -22,7 +22,9 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-	// Do any additional setup after loading the view.    
+	// Do any additional setup after loading the view.
+    self.title = @"我的会议";
+    
     _meetNameLab = [[UILabel alloc]initWithFrame:CGRectMake(30, 70, 90, 30)];
     [_meetNameLab setText:@"会议名称:"];
     _meetNameLab.backgroundColor = [UIColor clearColor];
@@ -43,7 +45,7 @@
     [self.view addSubview:_newBtn];
     
     
-    _headArray = [NSMutableArray arrayWithObjects:@"编号",@"会议名称",@"会议开始时间",@"会议结束时间",@"会议地点",@"操作", nil];
+    _headArray = [[NSMutableArray arrayWithObjects:@"编号",@"会议名称",@"会议开始时间",@"会议结束时间",@"会议地点",@"操作", nil] retain];
     
     GridView *gridView = [[GridView alloc] init];
     gridView.delegate = self;

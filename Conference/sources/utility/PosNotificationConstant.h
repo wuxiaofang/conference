@@ -12,3 +12,4 @@ void addObserverToNotificationCenter(id observer,SEL selector,NSString* notifica
 void removeObserverFromNotificationCenter(id observer);
 // login notification 
 extern NSString* const PosLoginNotification;
+extern NSString* const PosLogoutNotification;

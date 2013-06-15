@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "GridView.h"
+#import "PosBaseViewController.h"
 
-@interface MeetingManageViewController : UIViewController<GridViewDelegate, GridViewDataSource>
+@interface MeetingManageViewController : PosBaseViewController<GridViewDelegate, GridViewDataSource>
 
 
 @end

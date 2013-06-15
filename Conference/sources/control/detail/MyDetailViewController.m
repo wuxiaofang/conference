@@ -7,8 +7,19 @@
 //
 
 #import "MyDetailViewController.h"
+#import "PublicMeetingViewController.h"
+#import "CreateMeetingViewController.h"
+#import "MyTaskViewController.h"
+#import "MeetingManageViewController.h"
 
 @interface MyDetailViewController ()
+
+@property (nonatomic,retain)UIViewController* currentViewController;
+@property (nonatomic,assign)LoadType currentType;
+- (void)loadMyMettingViewController:(BOOL)animated;
+- (void)loadPyblicMettingViewController:(BOOL)animated;
+- (void)loadCreateMettingViewController:(BOOL)animated;
+- (void)loadMyTaskViewController:(BOOL)animated;
 
 @end
 
@@ -19,8 +30,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    MeetingManageViewController *meet = [[MeetingManageViewController alloc]init];
-    [self.navigationController pushViewController:meet animated:NO];
+    [self loadMyMettingViewController:NO];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -28,6 +39,17 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+- (void)dealloc
+{
+    self.currentViewController = nil;
+    [super dealloc];
+}
+
 
 #pragma mark - Split view
 
@@ -51,24 +73,98 @@
     switch (loadtype) {
         case LoadMyConference:
         {
+            [self loadMyMettingViewController:YES];
         }
             break;
         case LoadPublicConference:
         {
+            [self loadPyblicMettingViewController:YES];
         }
             break;
         case LoadCreateConference:
         {
+            [self loadCreateMettingViewController:YES];
         }
             break;
         case LoadMyTask:
         {
+            [self loadMyTaskViewController:YES];
         }
             break;
             
         default:
             break;
     }
+}
+
+#pragma mark - Internal
+- (void)loadMyMettingViewController:(BOOL)animated
+{
+    if(self.currentType != LoadMyConference){
+        if(self.currentViewController){
+            [self.navigationController popViewControllerAnimated:NO];
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            MeetingManageViewController *meet = [[[MeetingManageViewController alloc]init] autorelease];
+            [self.navigationController pushViewController:meet animated:animated];
+            self.currentViewController = meet;
+            self.currentType = LoadMyConference;
+        });
+
+
+    }
+}
+- (void)loadPyblicMettingViewController:(BOOL)animated
+{
+    if(self.currentType != LoadPublicConference){
+        if(self.currentViewController){
+            [self.navigationController popViewControllerAnimated:NO];
+        }
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            PublicMeetingViewController *publicMeet = [[[PublicMeetingViewController alloc]init] autorelease];
+            [self.navigationController pushViewController:publicMeet animated:animated];
+            self.currentViewController = publicMeet;
+            self.currentType = LoadPublicConference;
+
+        });
+
+    }
+}
+- (void)loadCreateMettingViewController:(BOOL)animated
+{
+    if(self.currentType != LoadCreateConference){
+        if(self.currentViewController){
+            [self.navigationController popViewControllerAnimated:NO];
+        }
+       
+        dispatch_async(dispatch_get_main_queue(), ^{
+            CreateMeetingViewController *createMeet = [[[CreateMeetingViewController alloc]init] autorelease];
+            [self.navigationController pushViewController:createMeet animated:animated];
+            self.currentViewController = createMeet;
+            self.currentType = LoadCreateConference;
+        });
+
+
+
+    }
+}
+- (void)loadMyTaskViewController:(BOOL)animated
+{
+    if(self.currentType != LoadMyTask){
+        if(self.currentViewController){
+            [self.navigationController popViewControllerAnimated:NO];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            MyTaskViewController *mytask = [[[MyTaskViewController alloc]init] autorelease];
+            [self.navigationController pushViewController:mytask animated:animated];
+            self.currentViewController = mytask;
+            self.currentType = LoadMyTask;
+        });
+
+    }
+
 }
 
 @end

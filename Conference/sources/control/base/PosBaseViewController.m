@@ -27,6 +27,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.navigationItem.hidesBackButton = YES;
+    self.view.backgroundColor = [UIColor whiteColor];
+
 }
 
 
@@ -43,6 +46,11 @@
     if([[[UIDevice currentDevice] systemVersion] floatValue] >= 6.0){
         [self releaseAllSubViews];
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation

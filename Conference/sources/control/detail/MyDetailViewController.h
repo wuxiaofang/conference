@@ -15,7 +15,6 @@ typedef enum{
     LoadMyTask              //我的任务
 }LoadType;
 
-#import "MeetingManageViewController.h"
 
 @interface MyDetailViewController : PosBaseViewController<UISplitViewControllerDelegate>
 

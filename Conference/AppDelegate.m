@@ -11,6 +11,7 @@
 #import "PosLoginViewController.h"
 @interface AppDelegate()<PosLoginDelegate>
 - (void)loadSplitViewController;
+- (void)handleLogoutNotification:(NSNotification*)notify;
 
 @end
 @implementation AppDelegate
@@ -27,13 +28,15 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    [self loadSplitViewController];
+    
     if(![[PosCore sharedInstance].userManager isLogin]){
         [self presentLoginViewControl];
     }else{
+        [self loadSplitViewController];
         self.window.rootViewController = self.splitViewController;
         
     }
+    addObserverToNotificationCenter(self, @selector(handleLogoutNotification:), PosLogoutNotification);
     return YES;
 }
 
@@ -67,24 +70,38 @@
 #pragma mark - Internal
 - (void)loadSplitViewController
 {
-    NSMutableArray* splitVCS_ = [[NSMutableArray alloc] init];
-    
-    //左视图
-    self.myMasterViewController = [[[MyMasterViewController alloc] init] autorelease];
-    UINavigationController* rootNav = [[UINavigationController alloc] initWithRootViewController:self.myMasterViewController];
-    [splitVCS_ addObject:rootNav];
-    [rootNav release];
-    
-    //右视图
-    self.myDetailViewController = [[[MyDetailViewController alloc] init] autorelease];
-    UINavigationController* mapNav = [[UINavigationController alloc] initWithRootViewController:self.myDetailViewController];
-    [splitVCS_ addObject:mapNav];
-    [mapNav release];
-    
-    //分栏视图
-    self.splitViewController = [[[UISplitViewController alloc] init] autorelease];
-    self.splitViewController.viewControllers = splitVCS_;
-    self.splitViewController.delegate = self.myDetailViewController;
+    if(self.splitViewController == nil){
+        NSMutableArray* splitVCS_ = [[NSMutableArray alloc] init];
+        
+        //左视图
+        self.myMasterViewController = [[[MyMasterViewController alloc] init] autorelease];
+        UINavigationController* rootNav = [[UINavigationController alloc] initWithRootViewController:self.myMasterViewController];
+        [splitVCS_ addObject:rootNav];
+        [rootNav release];
+        
+        //右视图
+        self.myDetailViewController = [[[MyDetailViewController alloc] init] autorelease];
+        UINavigationController* mapNav = [[UINavigationController alloc] initWithRootViewController:self.myDetailViewController];
+        [splitVCS_ addObject:mapNav];
+        [mapNav release];
+        
+        //分栏视图
+        self.splitViewController = [[[UISplitViewController alloc] init] autorelease];
+        self.splitViewController.viewControllers = splitVCS_;
+        self.splitViewController.delegate = self.myDetailViewController;
+
+    }
+    self.window.rootViewController = self.splitViewController;
+
+}
+
+// handle logout notification
+- (void)handleLogoutNotification:(NSNotification*)notify
+{
+    [self presentLoginViewControl];
+    self.splitViewController = nil;
+    self.myDetailViewController = nil;
+    self.myMasterViewController = nil;
 }
 #pragma mark - Public
 - (void)presentLoginViewControl
@@ -102,7 +119,7 @@
 
 - (void)loginSuccess
 {
-    self.window.rootViewController = self.splitViewController;
+    [self loadSplitViewController];
 }
 
 @end
