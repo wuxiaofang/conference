@@ -1,18 +1,14 @@
 //
 //  PosLoginViewController.m
-//  PosProject
+//  Conference
 //
-//  Created by wu xiaofang on 13-6-7.
-//  Copyright (c) 2013年 xiaofang.wu. All rights reserved.
+//  Created by wu xiaofang on 13-6-15.
+//  Copyright (c) 2013年 wu xiaofang. All rights reserved.
 //
 
 #import "PosLoginViewController.h"
-#import "PosCore.h"
 
 @interface PosLoginViewController ()
-@property (nonatomic,retain)UIButton* loginButton;
-- (void)initLoginSubViews;
-- (void)loginButtonPress;
 - (void)handleLoginNotification:(NSNotification*)notify;
 @end
 
@@ -30,8 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    [self initLoginSubViews];
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,35 +50,22 @@
 - (void)releaseAllSubViews
 {
     [super releaseAllSubViews];
-    self.loginButton = nil;
+
 }
 
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
     
-    CGFloat viewWidth = self.view.bounds.size.width;
-    self.loginButton.frame = CGRectMake(20, 130, viewWidth - 40, 35);
+//    CGFloat viewWidth = self.view.bounds.size.width;
+//    self.loginButton.frame = CGRectMake(20, 130, viewWidth - 40, 35);
     
 }
-
-#pragma mark - Internal
-// init
-- (void)initLoginSubViews
-{
-    self.loginButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [self.loginButton setTitle:@"登陆" forState:UIControlStateNormal];
-    [self.loginButton addTarget:self action:@selector(loginButtonPress) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.loginButton];
-}
-
-
-
 // button press
 
 - (void)loginButtonPress
 {
-//    [[PosCore sharedInstance].userManager loginWithUsername:@"" password:@""];
+    //    [[PosCore sharedInstance].userManager loginWithUsername:@"" password:@""];
     if(self.delegate&&[self.delegate respondsToSelector:@selector(loginSuccess)]){
         [self.delegate loginSuccess];
     }
@@ -98,9 +80,9 @@
         if(self.delegate&&[self.delegate respondsToSelector:@selector(loginSuccess)]){
             [self.delegate loginSuccess];
         }
-
+        
     }else{
-    
+        
     }
 }
 @end

@@ -35,7 +35,6 @@
 		5C3C67A6176B67C90052D40B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3C6794176B67C90052D40B /* Reachability.m */; };
 		5C3C67A7176B67C90052D40B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5C3C6795176B67C90052D40B /* README.md */; };
 		5C3C67CA176B67F70052D40B /* PosBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3C67AC176B67F70052D40B /* PosBaseViewController.m */; };
-		5C3C67CB176B67F70052D40B /* PosLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3C67AF176B67F70052D40B /* PosLoginViewController.m */; };
 		5C3C67CD176B67F70052D40B /* PosAcquireManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3C67B5176B67F70052D40B /* PosAcquireManager.m */; };
 		5C3C67CE176B67F70052D40B /* PosUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3C67B7176B67F70052D40B /* PosUserManager.m */; };
 		5C3C67CF176B67F70052D40B /* PosParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3C67BA176B67F70052D40B /* PosParser.m */; };
@@ -51,6 +50,10 @@
 		5C3C67E2176B6B780052D40B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C3C67E1176B6B780052D40B /* Security.framework */; };
 		5C3C67E4176B6B7F0052D40B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C3C67E3176B6B7F0052D40B /* CFNetwork.framework */; };
 		5C3C67E6176B6B870052D40B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C3C67E5176B6B870052D40B /* SystemConfiguration.framework */; };
+		5C782BED176C58DF00B2AA98 /* PosLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C782BEB176C58DF00B2AA98 /* PosLoginViewController.m */; };
+		5C782BEE176C58DF00B2AA98 /* PosLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C782BEC176C58DF00B2AA98 /* PosLoginViewController.xib */; };
+		5C782BF1176C5DCF00B2AA98 /* MyMasterTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C782BF0176C5DCF00B2AA98 /* MyMasterTitleCell.m */; };
+		5C782BF4176C5DE000B2AA98 /* MyMasterSubTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C782BF3176C5DE000B2AA98 /* MyMasterSubTitleCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,8 +104,6 @@
 		5C3C6795176B67C90052D40B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		5C3C67AB176B67F70052D40B /* PosBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PosBaseViewController.h; sourceTree = "<group>"; };
 		5C3C67AC176B67F70052D40B /* PosBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PosBaseViewController.m; sourceTree = "<group>"; };
-		5C3C67AE176B67F70052D40B /* PosLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PosLoginViewController.h; sourceTree = "<group>"; };
-		5C3C67AF176B67F70052D40B /* PosLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PosLoginViewController.m; sourceTree = "<group>"; };
 		5C3C67B4176B67F70052D40B /* PosAcquireManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PosAcquireManager.h; sourceTree = "<group>"; };
 		5C3C67B5176B67F70052D40B /* PosAcquireManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PosAcquireManager.m; sourceTree = "<group>"; };
 		5C3C67B6176B67F70052D40B /* PosUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PosUserManager.h; sourceTree = "<group>"; };
@@ -128,6 +129,13 @@
 		5C3C67E1176B6B780052D40B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		5C3C67E3176B6B7F0052D40B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		5C3C67E5176B6B870052D40B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5C782BEA176C58DF00B2AA98 /* PosLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PosLoginViewController.h; sourceTree = "<group>"; };
+		5C782BEB176C58DF00B2AA98 /* PosLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PosLoginViewController.m; sourceTree = "<group>"; };
+		5C782BEC176C58DF00B2AA98 /* PosLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PosLoginViewController.xib; sourceTree = "<group>"; };
+		5C782BEF176C5DCF00B2AA98 /* MyMasterTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMasterTitleCell.h; sourceTree = "<group>"; };
+		5C782BF0176C5DCF00B2AA98 /* MyMasterTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMasterTitleCell.m; sourceTree = "<group>"; };
+		5C782BF2176C5DE000B2AA98 /* MyMasterSubTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMasterSubTitleCell.h; sourceTree = "<group>"; };
+		5C782BF3176C5DE000B2AA98 /* MyMasterSubTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMasterSubTitleCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,8 +321,9 @@
 		5C3C67AD176B67F70052D40B /* login */ = {
 			isa = PBXGroup;
 			children = (
-				5C3C67AE176B67F70052D40B /* PosLoginViewController.h */,
-				5C3C67AF176B67F70052D40B /* PosLoginViewController.m */,
+				5C782BEA176C58DF00B2AA98 /* PosLoginViewController.h */,
+				5C782BEB176C58DF00B2AA98 /* PosLoginViewController.m */,
+				5C782BEC176C58DF00B2AA98 /* PosLoginViewController.xib */,
 			);
 			path = login;
 			sourceTree = "<group>";
@@ -409,6 +418,10 @@
 			children = (
 				5C3C67DA176B68BD0052D40B /* MyMasterViewController.h */,
 				5C3C67DB176B68BD0052D40B /* MyMasterViewController.m */,
+				5C782BEF176C5DCF00B2AA98 /* MyMasterTitleCell.h */,
+				5C782BF0176C5DCF00B2AA98 /* MyMasterTitleCell.m */,
+				5C782BF2176C5DE000B2AA98 /* MyMasterSubTitleCell.h */,
+				5C782BF3176C5DE000B2AA98 /* MyMasterSubTitleCell.m */,
 			);
 			path = master;
 			sourceTree = "<group>";
@@ -473,6 +486,7 @@
 				5C3C67A3176B67C90052D40B /* CHANGELOG.md in Resources */,
 				5C3C67A5176B67C90052D40B /* README.md in Resources */,
 				5C3C67A7176B67C90052D40B /* README.md in Resources */,
+				5C782BEE176C58DF00B2AA98 /* PosLoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,7 +513,6 @@
 				5C3C67A4176B67C90052D40B /* JSONKit.m in Sources */,
 				5C3C67A6176B67C90052D40B /* Reachability.m in Sources */,
 				5C3C67CA176B67F70052D40B /* PosBaseViewController.m in Sources */,
-				5C3C67CB176B67F70052D40B /* PosLoginViewController.m in Sources */,
 				5C3C67CD176B67F70052D40B /* PosAcquireManager.m in Sources */,
 				5C3C67CE176B67F70052D40B /* PosUserManager.m in Sources */,
 				5C3C67CF176B67F70052D40B /* PosParser.m in Sources */,
@@ -510,6 +523,9 @@
 				5C3C67D4176B67F70052D40B /* PosNotificationConstant.m in Sources */,
 				5C3C67D9176B68AE0052D40B /* MyDetailViewController.m in Sources */,
 				5C3C67DC176B68BD0052D40B /* MyMasterViewController.m in Sources */,
+				5C782BED176C58DF00B2AA98 /* PosLoginViewController.m in Sources */,
+				5C782BF1176C5DCF00B2AA98 /* MyMasterTitleCell.m in Sources */,
+				5C782BF4176C5DE000B2AA98 /* MyMasterSubTitleCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,6 +640,7 @@
 				5C3C6770176B679A0052D40B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

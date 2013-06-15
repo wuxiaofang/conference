@@ -51,4 +51,31 @@
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
 }
 
+#pragma mark - Public
+- (void)loadDataSource:(LoadType)loadtype
+{
+    NSLog(@"%d",loadtype);
+    switch (loadtype) {
+        case LoadMyConference:
+        {
+        }
+            break;
+        case LoadPublicConference:
+        {
+        }
+            break;
+        case LoadCreateConference:
+        {
+        }
+            break;
+        case LoadMyTask:
+        {
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
+
 @end

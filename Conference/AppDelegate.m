@@ -68,7 +68,7 @@
 - (void)loadSplitViewController
 {
     
-    NSString* tempString = @"ddd";
+    
     NSMutableArray* splitVCS_ = [[NSMutableArray alloc] init];
     
     //左视图
@@ -95,10 +95,9 @@
     
     PosLoginViewController* loginViewControl = [[PosLoginViewController alloc] init];
     loginViewControl.delegate = self;
-    UINavigationController* loginNav = [[UINavigationController alloc] initWithRootViewController:loginViewControl];
-    self.window.rootViewController = loginNav;
+  
+    self.window.rootViewController = loginViewControl;
     [loginViewControl release];
-    [loginNav release];
     
 }
 
