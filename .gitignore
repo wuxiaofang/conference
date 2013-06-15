@@ -16,3 +16,5 @@ profile
 *.moved-aside
 DerivedData
 .idea/
+
+Conference.xcodeproj/project.xcworkspace/xcuserdata/wuxiaofang.xcuserdatad/UserInterfaceState.xcuserstate

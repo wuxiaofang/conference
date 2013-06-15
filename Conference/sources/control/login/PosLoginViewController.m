@@ -61,6 +61,7 @@
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
+    
     CGFloat viewWidth = self.view.bounds.size.width;
     self.loginButton.frame = CGRectMake(20, 130, viewWidth - 40, 35);
     
