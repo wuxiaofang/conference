@@ -100,47 +100,47 @@
 - (void)drawRect:(CGRect)rect
 {
     [super drawRect:rect];
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//    for (GridCellModel *cellModel in self.cellModelsMArr)
-//    {
-//        NSString *text = cellModel.text;
-//        CGRect cellFrame = cellModel.cellFrame;
-//        CGContextSetRGBFillColor(context, cellModel.bgColor.red, cellModel.bgColor.green, cellModel.bgColor.blue, cellModel.bgColor.alpha);
-//        CGContextFillRect(context, cellFrame);
-//        UIColor *color = [UIColor colorWithRed:cellModel.frameColor.red green:cellModel.frameColor.red blue:cellModel.frameColor.red alpha:cellModel.frameColor.red];
-//        CGContextSetStrokeColorWithColor(context, color.CGColor);
-//        CGContextSetLineWidth(context, 1.0);
-//        if (cellModel.position.section == GridSectionHeader || cellModel.position.section == GridSectionFooter) {
-//            CGContextMoveToPoint(context, cellFrame.origin.x + cellFrame.size.width, cellFrame.origin.y);
-//            CGContextAddLineToPoint(context, cellFrame.origin.x + cellFrame.size.width, cellFrame.origin.y + cellFrame.size.height);
-//        } else if (cellModel.position.section == GridSectionContent) {
-//            CGContextMoveToPoint(context, cellFrame.origin.x, cellFrame.origin.y + cellFrame.size.height);
-//            CGContextAddLineToPoint(context, cellFrame.origin.x + cellFrame.size.width, cellFrame.origin.y + cellFrame.size.height);
-//        }
-//        CGContextStrokePath(context);
-//        GridPadding padding = cellModel.padding;
-//        CGFloat textFontSize = cellModel.textFontSize;
-//        CGFloat x = cellFrame.origin.x + padding.left;
-//        CGFloat y = padding.top;
-//        CGFloat width = cellFrame.size.width - padding.left - padding.right;
-//        float textRealWidth = [text sizeWithFont:[UIFont systemFontOfSize:textFontSize]].width;
-//        if (cellModel.isDecForFontSizeAble) {
-//            while (textRealWidth > width) {
-//                textRealWidth = [text sizeWithFont:[UIFont systemFontOfSize:--textFontSize]].width;
-//                if (textFontSize < cellModel.minimumFontSize) {
-//                    break;
-//                }
-//            }
-//        }
-//        if (textRealWidth > width) {
-//            cellModel.isOutWidth = YES;
-//        }
-//        CGFloat height = cellFrame.size.height - padding.top - padding.bottom;
-//        CGRect textFrame = CGRectMake(x, y, width, height);
-//        UITextAlignment textAlignment = cellModel.textAlignment;
-//        CGContextSetRGBFillColor(context, cellModel.textColor.red, cellModel.textColor.green, cellModel.textColor.blue, cellModel.textColor.alpha);
-//        [text drawInRect:textFrame withFont:[UIFont systemFontOfSize:textFontSize] lineBreakMode:UILineBreakModeTailTruncation alignment:textAlignment];
-//    }
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    for (GridCellModel *cellModel in self.cellModelsMArr)
+    {
+        NSString *text = cellModel.text;
+        CGRect cellFrame = cellModel.cellFrame;
+        CGContextSetRGBFillColor(context, cellModel.bgColor.red, cellModel.bgColor.green, cellModel.bgColor.blue, cellModel.bgColor.alpha);
+        CGContextFillRect(context, cellFrame);
+        UIColor *color = [UIColor colorWithRed:cellModel.frameColor.red green:cellModel.frameColor.red blue:cellModel.frameColor.red alpha:cellModel.frameColor.red];
+        CGContextSetStrokeColorWithColor(context, color.CGColor);
+        CGContextSetLineWidth(context, 1.0);
+        if (cellModel.position.section == GridSectionHeader || cellModel.position.section == GridSectionFooter) {
+            CGContextMoveToPoint(context, cellFrame.origin.x + cellFrame.size.width, cellFrame.origin.y);
+            CGContextAddLineToPoint(context, cellFrame.origin.x + cellFrame.size.width, cellFrame.origin.y + cellFrame.size.height);
+        } else if (cellModel.position.section == GridSectionContent) {
+            CGContextMoveToPoint(context, cellFrame.origin.x, cellFrame.origin.y + cellFrame.size.height);
+            CGContextAddLineToPoint(context, cellFrame.origin.x + cellFrame.size.width, cellFrame.origin.y + cellFrame.size.height);
+        }
+        CGContextStrokePath(context);
+        GridPadding padding = cellModel.padding;
+        CGFloat textFontSize = cellModel.textFontSize;
+        CGFloat x = cellFrame.origin.x + padding.left;
+        CGFloat y = padding.top;
+        CGFloat width = cellFrame.size.width - padding.left - padding.right;
+        float textRealWidth = [text sizeWithFont:[UIFont systemFontOfSize:textFontSize]].width;
+        if (cellModel.isDecForFontSizeAble) {
+            while (textRealWidth > width) {
+                textRealWidth = [text sizeWithFont:[UIFont systemFontOfSize:--textFontSize]].width;
+                if (textFontSize < cellModel.minimumFontSize) {
+                    break;
+                }
+            }
+        }
+        if (textRealWidth > width) {
+            cellModel.isOutWidth = YES;
+        }
+        CGFloat height = cellFrame.size.height - padding.top - padding.bottom;
+        CGRect textFrame = CGRectMake(x, y, width, height);
+        UITextAlignment textAlignment = cellModel.textAlignment;
+        CGContextSetRGBFillColor(context, cellModel.textColor.red, cellModel.textColor.green, cellModel.textColor.blue, cellModel.textColor.alpha);
+        [text drawInRect:textFrame withFont:[UIFont systemFontOfSize:textFontSize] lineBreakMode:UILineBreakModeTailTruncation alignment:textAlignment];
+    }
 //    if (self.flag)
 //    {
 //        _participateBtn.alpha = 1;
@@ -151,7 +151,7 @@
 //        _participateBtn.alpha = 0;
 ////        _rejectBtn.alpha = 0;
 //    }
-    _participateBtn.frame = CGRectMake(0, (self.frame.size.height-50)/2, 30, 50);
+    _participateBtn.frame = CGRectMake(0, 0, 30, 50);
 //    _rejectBtn.frame = CGRectMake(_participateBtn.frame.origin.x+_participateBtn.frame.size.width, _participateBtn.frame.origin.y , _participateBtn.frame.size.width, _participateBtn.frame.size.height);
 }
 

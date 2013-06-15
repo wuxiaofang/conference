@@ -37,7 +37,7 @@
         _isDeleteRowAble = NO;
         _isDecForFontSizeAble = NO;
         _minimumFontSize = 12.0;
-        _lockedColumnMArr = [[NSMutableArray alloc] initWithObjects:@"0",@"1", nil];
+        _lockedColumnMArr = [[NSMutableArray alloc] initWithObjects:@"0",@"1",@"2",@"3",@"4",@"5", nil];
         _leftContentQueue = [[NSMutableArray alloc] init];
         _rightContentQueue = [[NSMutableArray alloc] init];
         [self _initView];
@@ -330,7 +330,7 @@
         }
         [leftRowView setFrame:CGRectMake(.0, rowViewOffsetY, leftRowViewOffsetX, cellHeight)];
         if (_isDeleteRowAble) {
-            [leftRowView drawDeleteBtnWithHeight:cellHeight andWithSection:GridSectionContent];
+//            [leftRowView drawDeleteBtnWithHeight:cellHeight andWithSection:GridSectionContent];
         }
         [rightRowView setFrame:CGRectMake(.0, rowViewOffsetY, rightRowViewOffsetX, cellHeight)];
         [leftRowView setNeedsDisplay];
